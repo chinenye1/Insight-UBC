@@ -1,0 +1,52 @@
+{
+	"title": "should summarize results for the chem 121",
+	"input":{
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "chem"
+					}
+				},
+				{
+					"IS": {
+						"courses_id": "121"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"overallAvg",
+				"overallFail"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"overallAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_id"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"overallFail": {
+						"SUM": "courses_fail"
+					}
+				}
+			]
+		}
+	},
+"errorExpected": false,
+"expected":[{"courses_dept":"chem","courses_id":"121","overallAvg":68.94,"overallFail":4204}]}

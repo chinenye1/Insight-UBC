@@ -1,0 +1,22 @@
+{
+  "title": "should reject when query input string is capital.",
+  "input":{
+    "WHERE": {
+      "IS": {
+        "courses_dept": "MATH"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_id"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": false,
+  "expected": []
+}
+
+

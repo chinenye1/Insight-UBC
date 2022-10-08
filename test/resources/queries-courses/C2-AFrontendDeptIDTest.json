@@ -1,0 +1,47 @@
+{
+	"title": "should summarize results for the cpsc 310",
+	"input":{
+		"WHERE": {
+			"AND": [{
+				"IS": {
+					"courses_dept": "cpsc"
+				}},
+				{
+					"IS": {
+						"courses_id": "310"
+					}
+				}]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"overallAvg",
+				"overallFail"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"overallAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"overallFail": {
+						"SUM": "courses_fail"
+					}
+				}
+			]
+		}
+	},
+"errorExpected": false,
+"expected":[{"courses_dept":"cpsc","overallAvg":78.25,"overallFail":84}]}

@@ -1,0 +1,20 @@
+{
+  "title": "should reject query if COLUMNS is an empty array.",
+  "input": {
+    "WHERE": {
+      "IS": {
+        "courses_dept": "adhe"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}
+
+
+

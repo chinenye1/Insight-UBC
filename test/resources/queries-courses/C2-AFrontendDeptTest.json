@@ -1,0 +1,41 @@
+{
+	"title": "should summarize results for the cpsc dept",
+	"input":{
+		"WHERE": {
+			"IS": {
+				"courses_dept": "cpsc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"overallAvg",
+				"overallFail"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"overallAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"overallFail": {
+						"SUM": "courses_fail"
+					}
+				}
+			]
+		}
+	},
+"errorExpected": false,
+"expected":[{"courses_dept":"cpsc","overallAvg":77.58,"overallFail":5678}]}

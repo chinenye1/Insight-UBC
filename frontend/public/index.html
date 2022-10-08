@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend</title>
+	<link href="/style.css" rel="stylesheet"/>
+</head>
+<body>
+<h1>
+	UBC Course/Department Search Page
+</h1>
+<img src="https://news.ubc.ca/wp-content/uploads/2019/04/UBC-1024x576.jpg">
+<p>
+	Please enter the department[1] you wish to search for or the course [2] you wish to search and the results will be
+	displayed below.
+	<br> <br> _____________________________________________
+	<br> <br>[1] = All departments must be valid.
+	<br> Note that a valid department includes the department's complete short name or a substring of the shortname. (E.g "cpsc" or "ps" are both valid inputs)
+	<br> If you choose to input a substring, You will recieve results for any department that includes that substring.
+	<br> (E.g: input = "th" -> results = "math...., anth.... (etc)")
+	<br> Note that a substring of a department and a course number (E.g: input = "ps 310") also works!
+	<br> <br>[2] = All courses must be valid.
+	<br> Note that a valid course includes the department's complete short name or a substring of the shortname (see [1]) and course number or a substring of course number (E.g "cpsc 110" or "ps 11" are both valid inputs).
+	<br> If you choose to input a substring of department shortname and substring of course number, the course number substring length must be at least 2 numbers.
+	<br> <br> _____________________________________________
+	<br> <br> <span style="color: red;text-align: center">Make sure not to add eny extra spaces!</span>
+</p>
+<div class="container">
+	<label for="search-area"></label>
+	<input type="text", id="search-area" , name="search-area" , placeholder="Enter your search here ...">
+	<button id="search-button" class="button">Search</button>
+	<script type="text/javascript" src="/frontend.js"></script>
+</div>
+<div class="container", id="display-results">
+	Results will be displayed here
+</div>
+</body>
+</html>

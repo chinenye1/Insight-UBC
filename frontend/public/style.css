@@ -1,0 +1,49 @@
+.button {
+	background-color: #3f51b5;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+h1, p {
+	text-align: center;
+}
+
+.container {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input {
+	margin-right: 10px;
+}
+
+img {
+	max-width: 100%;
+	min-width: 70%;
+	max-height: 50%;
+	min-height: 3em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+
+}
+#display-results{
+	width: 50%;
+	display: block;
+	overflow: auto;
+	background-color: lightgray;
+	padding: 20px;
+	margin-top: 3%;
+}
+

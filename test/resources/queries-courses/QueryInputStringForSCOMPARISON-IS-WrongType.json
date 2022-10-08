@@ -1,0 +1,23 @@
+{
+  "title": "should reject query when SCOMPARISON IS in WHERE has a wrong type.",
+  "input": {
+    "WHERE": {
+      "IS": {
+        "courses_dept": 97
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}
+
+
+
+

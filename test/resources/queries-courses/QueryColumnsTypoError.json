@@ -1,0 +1,23 @@
+{
+  "title": "should reject query with wrong key name or typo in COLUMNS.",
+  "input": {
+    "WHERE": {
+      "IS": {
+        "courses_dept": "adhe"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept,avg",
+        "courses_avg",
+        "courses_id"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}
+
+
+

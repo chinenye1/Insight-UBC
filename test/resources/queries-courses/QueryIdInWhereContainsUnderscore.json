@@ -1,0 +1,20 @@
+{
+  "title": "should reject query when id in WHERE contains and underscore.",
+  "input": {
+    "WHERE": {
+      "IS": {
+        "_courses_dept": "adhe"
+      }
+    },
+    "OPTIONS": {
+      "COLUMNS": [
+        "courses_dept",
+        "courses_avg",
+        "courses_id"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

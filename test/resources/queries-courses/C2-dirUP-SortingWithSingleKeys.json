@@ -1,0 +1,22 @@
+{
+  "title": "should sort dataset given dir=UP with single key.",
+  "input": {
+	  "WHERE": {"OR": [{"IS": {"courses_dept": "cpsc"}}, {"IS": {"courses_dept": "bioc"}}]},
+	  "OPTIONS": {
+		  "COLUMNS": ["courses_dept", "overallAvg"],
+		  "ORDER": {
+			  "dir": "UP",
+			  "keys": ["overallAvg"]
+		  }
+	  },
+	  "TRANSFORMATIONS": {
+		  "GROUP": ["courses_dept"],
+		  "APPLY": [{
+			  "overallAvg": {
+				  "AVG": "courses_avg"
+			  }
+		  }]
+	  }
+  },
+  "errorExpected": false,
+  "expected":[{"courses_dept":"cpsc","overallAvg":77.58},{"courses_dept":"bioc","overallAvg":77.9}]}
